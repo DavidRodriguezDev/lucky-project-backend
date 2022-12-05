@@ -5,7 +5,8 @@ const dotenv = require("dotenv")
 //ROUTERS
 
 const routerPets = require("./src/api/routes/pets.routes");
-
+const routerAdoption = require("./src/api/routes/adoption.routes");
+const userRouter = require("./src/api/routes/users.routes")
 
 
 connect();  //Conexión con nuestra base de datos.
@@ -20,7 +21,8 @@ app.use(express.json()); //Necesario para poder usar json a la hora de enviar da
 app.use(express.urlencoded({ extended : false }));
 
 app.use("/pets", routerPets);
-
+app.use("/adoption", routerAdoption);
+app.use("/users", userRouter);
 app.use('*', (req, res) => res.status(404).json('La ruta seleccionada no existe.'));
 app.use((error, res) => {
 
