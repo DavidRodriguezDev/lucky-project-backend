@@ -4,7 +4,7 @@ const Adoption = require("../models/adoption.models") //Requerimos el modelo de 
 const getAllAdoption = async (request, response) => {
     
     try {
-        
+         
         const allAdoptions = await Adoption.find();
         return response.status(200).json(allAdoptions);
 
@@ -34,8 +34,8 @@ const postNewAdoption = async (request, response) => {
 
     try {
         console.log(request.body);
-        const {species, birthday, sex, size, weight, personality, history, vaccinated, dewormed, healthy, sterilized, identified, microchip, about, requirements, rate, shipping } = request.body;
-        const newAdoption = new Adoption( {species, birthday, sex, size, weight, personality, history, vaccinated, dewormed, healthy, sterilized, identified, microchip, about, requirements, rate, shipping} );
+        const {name, email, phone, dni, adress, cp, city, moreAnimals, which, sociable, why, needs, expenses, nutrition, whereDoYouLive, renting, petPermission, moving, garden, morePeople, allAgree, visitAgree } = request.body;
+        const newAdoption = new Adoption( {name, email, phone, dni, adress, cp, city, moreAnimals, which, sociable, why, needs, expenses, nutrition, whereDoYouLive, renting, petPermission, moving, garden, morePeople, allAgree, visitAgree } );
         const createdAdoption = await newAdoption.save();
         return response.status(201).json(createdAdoption);
 

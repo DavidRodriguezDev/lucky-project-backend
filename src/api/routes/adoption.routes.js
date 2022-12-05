@@ -10,4 +10,4 @@ routerAdoption.post('/', postNewAdoption);          //POST Para crear un nuevo e
 routerAdoption.put('/:id', putAdoption);     //PUT Para modificar un elemento de la base de datos recibiendo como parámetro un id
 routerAdoption.delete('/:id', deleteAdoption );  //DELETE Para eliminar un elemento de la base de datos recibiendo como parámetro un id*/
 
-module.exports = routerAdoption
+module.exports = routerAdoption 

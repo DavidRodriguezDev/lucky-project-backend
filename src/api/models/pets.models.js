@@ -26,6 +26,6 @@ const petSchema = new Schema({
     timestamps : true
 })
 
-const Pet = mongoose.model("pets", petSchema); //Creamos nuestro modelo para la protectora.
+const Pet = mongoose.model("Pets", petSchema); //Creamos nuestro modelo para la protectora.
 
 module.exports = Pet;

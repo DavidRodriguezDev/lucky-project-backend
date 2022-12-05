@@ -31,6 +31,6 @@ const adoptionSchema = new Schema({
     timestamps : true
 })
 
-const Adoption = mongoose.model("adoption", adoptionSchema); //Creamos nuestro modelo para la protectora.
+const Adoption = mongoose.model("Adoption", adoptionSchema); //Creamos nuestro modelo para la protectora.
 
 module.exports = Adoption;
