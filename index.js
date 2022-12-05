@@ -15,8 +15,6 @@ const PORT = process.env.PORT || 7000;
 
 const app = express();
 
-
-
 app.use(express.json()); //Necesario para poder usar json a la hora de enviar datos como puede ser con el método POST.
 app.use(express.urlencoded({ extended : false }));
 
