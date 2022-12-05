@@ -14,6 +14,7 @@ const userSchema = new Schema({
 })
 
 userSchema.pre("save", function(next) { //Antes de guardar transformamos la password encriptada
+    
     this.password = bcrypt.hashSync(this.password, 10);
     next();
 })

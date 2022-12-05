@@ -1,15 +1,28 @@
 const User = require("../models/users.models");
 const bcrypt = require("bcrypt");
+const {validationPassword, validationEmail} = require("../../validators/validation");
 
 const register = async (request, response, next) => {
 
     try {
         
         const newUser = new User(request.body);
-        console.log(request.body);
-        createdUser = await newUser.save()
-        console.log(createdUser);
-        return response.status(201).json(createdUser)
+
+        if(!validationEmail(request.body.email)) {
+            console.log({code : 403, message : "Invalid email"});
+            response.status(403).json({message : "Invalid email"});
+            return next();
+        }
+    
+        if(!validationPassword(request.body.password)) {
+            console.log({code : 403, message : "Invalid password"});
+            response.status(403).json({message : "Invalid password"});
+            return next();
+        }
+
+        newUser.password = bcrypt.hashSync(newUser.password, 10);
+        const createdUser = await newUser.save();
+        return response.status(201).json(createdUser);
 
     } catch (error) {
         
