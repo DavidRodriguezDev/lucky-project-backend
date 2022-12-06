@@ -6,6 +6,6 @@ const {register, login, logout} = require("../controllers/users.controllers");
 
 userRouter.post("/register", register)
 userRouter.post("/login", login)
-userRouter.post("/logout")
+userRouter.post("/logout", logout)
 
 module.exports = userRouter;

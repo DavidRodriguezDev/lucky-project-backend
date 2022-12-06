@@ -20,7 +20,8 @@ const petSchema = new Schema({
     about : {type : String},
     requirements : {type : String, required : true},
     rate : {type : Number, required : true},
-    shipping : {type : String, required : true}
+    shipping : {type : String, required : true},
+    animalShelter : [{type : Schema.Types.ObjectId, ref : "AnimalShelter"}]
 }, 
 {
     timestamps : true

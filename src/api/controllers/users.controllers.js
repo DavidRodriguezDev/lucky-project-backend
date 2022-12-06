@@ -42,7 +42,7 @@ const login = async (request, response, next) => {
                 
             const token = generateSign(userInfo._id, userInfo.email)  //Pasamos como parámetros _id y email para generar la firma.
             console.log(token);
-            return response.status(200).json(token); //Devolvemos el token
+            return response.status(200).json({token : token}); //Devolvemos el token
 
         } else {
             return response.status(400).json({message : "Invalid password"});
@@ -57,6 +57,14 @@ const login = async (request, response, next) => {
 
 const logout = async (request, response, next) => {
     
+    try {
+        
+        response.status(200).json({token : null})
+
+    } catch (error) {
+        return response.status(500).json(error);
+    }
+
 }
 
 module.exports = {register, login, logout}

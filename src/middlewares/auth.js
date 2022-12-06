@@ -19,11 +19,12 @@ const isAuth = (request, response, next) => {
         request._user = tokenVerified;
 
     } catch (error) {
-        
-        return response.status(500).json(error)
 
     }
 
+    console.log(token);
+
+    next();
 }
 
 module.exports = {isAuth}
