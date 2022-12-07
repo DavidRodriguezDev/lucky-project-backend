@@ -9,7 +9,7 @@ const animalShelterSchema = new Schema({
     email : {type : String, required : true},
     password : {type : String, required : true},
     photo : {type : String},
-    adress : {type : String, required : true},
+    address : {type : String, required : true},
     pets : [{type : Schema.Types.ObjectId, ref : "Pets"}]
 }, {
 
