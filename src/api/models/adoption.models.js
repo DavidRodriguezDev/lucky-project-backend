@@ -4,28 +4,33 @@ const Schema = mongoose.Schema;
 
 const adoptionSchema = new Schema({
 
-    species : {type : String, required : true},
-    birthday : {type : String, required : true},
-    sex : {type : String},
-    size : {type : String, required : true},
-    weight : {type : String, required : true},
-    personality : {type : String},
-    history : {type : String},  
-    vaccinated : {type : Boolean, required : true},
-    dewormed : {type : Boolean, required : true},
-    healthy : {type : Boolean, required : true},
-    sterilized  : {type : Boolean, required : true},
-    identified : {type : Boolean, required : true},
-    microchip : {type : Boolean, required : true},
-    about : {type : String},
-    requirements : {type : String, required : true},
-    rate : {type : Number, required : true},
-    shipping : {type : String, required : true}
+    name : {type : String, required : true},
+    email : {type : String, required : true},
+    phone : {type : String},
+    dni : {type : String, required : true},
+    adress : {type : String, required : true},
+    cp : {type : String},
+    city : {type : String},  
+    moreAnimals : {type : Boolean, required : true},
+    which : {type : Boolean, required : true},
+    sociable : {type : Boolean, required : true},
+    why  : {type : String, required : true},
+    needs : {type : String, required : true},
+    expenses : {type : Boolean, required : true},
+    nutrition : {type : Boolean, required : true},
+    whereDoYouLive : {type : String, required : true},
+    renting : {type : Boolean, required : true},
+    petPermission : {type : Boolean, required : true},
+    moving : {type : String},
+    garden : {type : Boolean},
+    morePeople : {type:Boolean},
+    allAgree : {type:Boolean},
+    visitAgree : {type:Boolean}
 }, 
 {
     timestamps : true
 })
 
-const Adoption = mongoose.model("adoption", adoptionSchema); //Creamos nuestro modelo para la protectora.
+const Adoption = mongoose.model("Adoption", adoptionSchema); //Creamos nuestro modelo para la protectora.
 
 module.exports = Adoption;

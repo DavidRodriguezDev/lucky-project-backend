@@ -5,7 +5,7 @@ const getAllPets = async (request, response) => {
     
     try {
         
-        const allPets = await Pet.find();
+        const allPets = await Pet.find().populate("AnimalShelter");
         return response.status(200).json(allPets);
 
     } catch (error) {
@@ -20,7 +20,7 @@ const getPet = async (request, response) => {
     try {
         
         const {id} = request.params;
-        const allPets = await Pet.findById(id);
+        const allPets = await Pet.findById(id).populate("AnimalShelter");
         return response.status(200).json(allPets);
 
     } catch (error) {

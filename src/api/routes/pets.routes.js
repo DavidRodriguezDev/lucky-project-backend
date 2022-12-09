@@ -2,6 +2,8 @@ const express = require("express");
 
 const routerPets = express.Router(); //Creamos nuestro enroutador
 
+const {isAuth} = require("../../middlewares/auth")
+
 const {getAllPets, getPet, postNewPet, putPet, deletePet} = require("../controllers/pets.controllers");
 
 routerPets.get('/', getAllPets);        //GET Creamos todas las funciones, las exportamos y las anexionamos al router correspondiente
